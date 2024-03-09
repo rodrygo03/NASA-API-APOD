@@ -11,8 +11,8 @@
 		7E2020E22B8D876200AA88F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2020E12B8D876200AA88F2 /* ContentView.swift */; };
 		7E2020E42B8D876300AA88F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2020E32B8D876300AA88F2 /* Assets.xcassets */; };
 		7E2020E72B8D876300AA88F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2020E62B8D876300AA88F2 /* Preview Assets.xcassets */; };
-		7E2020EE2B8D8A8A00AA88F2 /* apiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7E2020ED2B8D8A8A00AA88F2 /* apiKey.txt */; };
 		7E8A3C892B8E9A1A0007A91F /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8A3C882B8E9A1A0007A91F /* ApiCalls.swift */; };
+		7E8B98B32B9CE7EF0053ECD6 /* apiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B98B22B9CE7EF0053ECD6 /* apiKey.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +21,8 @@
 		7E2020E12B8D876200AA88F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7E2020E32B8D876300AA88F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E2020E62B8D876300AA88F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7E2020ED2B8D8A8A00AA88F2 /* apiKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apiKey.txt; sourceTree = "<group>"; };
 		7E8A3C882B8E9A1A0007A91F /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
+		7E8B98B22B9CE7EF0053ECD6 /* apiKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apiKey.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 				7E2020DF2B8D876200AA88F2 /* APODApp.swift */,
 				7E2020E12B8D876200AA88F2 /* ContentView.swift */,
 				7E8A3C882B8E9A1A0007A91F /* ApiCalls.swift */,
-				7E2020ED2B8D8A8A00AA88F2 /* apiKey.txt */,
+				7E8B98B22B9CE7EF0053ECD6 /* apiKey.txt */,
 				7E2020E32B8D876300AA88F2 /* Assets.xcassets */,
 				7E2020E52B8D876300AA88F2 /* Preview Content */,
 			);
@@ -132,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E2020E72B8D876300AA88F2 /* Preview Assets.xcassets in Resources */,
-				7E2020EE2B8D8A8A00AA88F2 /* apiKey.txt in Resources */,
+				7E8B98B32B9CE7EF0053ECD6 /* apiKey.txt in Resources */,
 				7E2020E42B8D876300AA88F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
