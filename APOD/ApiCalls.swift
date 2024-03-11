@@ -19,12 +19,18 @@ struct APOD: Decodable {
     let explanation: String
     let hdurl: String
     let title: String
+    let media_type: String
     
+    /* dummy constructor, allows the object to be used in content view
+       as a private variable, get initlized after network call. Dummy values
+       are displayed until call is carried out succesfully. Choose better values?
+    */
     init()  {
-        date = ""
-        explanation = ""
-        hdurl = ""
-        title = ""
+        date = "---"
+        explanation = "-"
+        hdurl = "___"
+        title = "-"
+        media_type = "x"
     }
 }
 

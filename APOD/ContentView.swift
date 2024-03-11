@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 
 struct ContentView: View {
@@ -17,21 +18,29 @@ struct ContentView: View {
             Text(picOfDay.title)
                 .font(.title)
                 .multilineTextAlignment(.center)
-            AsyncImage(url: URL(string: picOfDay.hdurl)) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                }
-                else if phase.error != nil  {
-                    Text("Error loading image")
-                }
-                else {
-                    ProgressView()
+            
+            // define a closer to allow readiablity ?
+            if (picOfDay.media_type != "image") {
+                VideoPlayer(player: AVPlayer(url: URL(string: picOfDay.hdurl)!))
+            }
+            else {
+                AsyncImage(url: URL(string: picOfDay.hdurl)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    else if phase.error != nil  {
+                        Text("Error loading image")
+                    }
+                    else {
+                        ProgressView()
+                    }
                 }
             }
+            
+            
         }
-
 
         ScrollView  {
             VStack {
@@ -60,6 +69,7 @@ struct ContentView: View {
 
     }
 }
+
 #Preview {
     ContentView()
 }
