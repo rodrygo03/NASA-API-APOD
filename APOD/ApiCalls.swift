@@ -17,7 +17,7 @@ enum CallError: Error {
 struct APOD: Decodable {
     let date: String
     let explanation: String
-    let hdurl: String
+    let url: String
     let title: String
     let media_type: String
     
@@ -28,7 +28,7 @@ struct APOD: Decodable {
     init()  {
         date = "---"
         explanation = "-"
-        hdurl = "___"
+        url = "___"
         title = "-"
         media_type = "x"
     }

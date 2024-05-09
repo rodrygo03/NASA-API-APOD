@@ -6,8 +6,36 @@
 //
 
 import SwiftUI
-import AVKit
+import WebKit
 
+
+struct VideoView: UIViewRepresentable   {
+    let apod: APOD
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard let url = URL(string: apod.url) else {return}
+        let request = URLRequest(url: url)
+        uiView.load(request)
+    }
+}
+
+/* Testing Video Media Type using hard link*/
+//var s = "https://www.youtube.com/embed/l36UkYtq6m0?rel=0"
+//struct tView: UIViewRepresentable   {
+//    let str: String
+//    
+//    func makeUIView(context: Context) -> WKWebView {
+//        return WKWebView()
+//    }
+//    func updateUIView(_ uiView: WKWebView, context: Context) {
+//        guard let url = URL(string: str) else {return}
+//        let request = URLRequest(url: url)
+//        uiView.load(request)
+//    }
+//}
 
 struct ContentView: View {
     @State private var picOfDay = APOD()
@@ -20,11 +48,11 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
             
             // define a closer to allow readiablity ?
-            if (picOfDay.media_type != "image") {
-                VideoPlayer(player: AVPlayer(url: URL(string: picOfDay.hdurl)!))
+            if (picOfDay.media_type == "video") {
+                VideoView(apod: picOfDay)
             }
             else {
-                AsyncImage(url: URL(string: picOfDay.hdurl)) { phase in
+                AsyncImage(url: URL(string: picOfDay.url)) { phase in
                     if let image = phase.image {
                         image
                             .resizable()
@@ -54,6 +82,7 @@ struct ContentView: View {
             do {
                 try await picOfDay = fetchAPOD()
                 print("Success")
+                print(picOfDay.url)
             } catch CallError.fileNotFound {
                 print("file not found")
             } catch CallError.contentError {
@@ -63,7 +92,7 @@ struct ContentView: View {
             } catch CallError.invalidURL {
                 print("Error with URL")
             } catch {
-                print("Other error")
+                print("Other error: \(error)")
             }
         }
 
